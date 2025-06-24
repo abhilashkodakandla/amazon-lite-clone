@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkout | Amazon Lite</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">Amazon<span class="lite">Lite</span></div>
+    <input type="text" class="search-box" placeholder="Search products...">
+    <a href="cart.html" class="cart-link">🛒 Cart</a>
+  </header>
+
+  <main>
+    <h2 style="text-align: center;">Checkout</h2>
+    <form id="checkout-form" style="max-width: 400px; margin: auto; padding: 1rem;">
+      <input type="text" placeholder="Full Name" required class="search-box" />
+      <input type="email" placeholder="Email" required class="search-box" />
+      <input type="text" placeholder="Shipping Address" required class="search-box" />
+      <button type="submit" class="btn" style="width: 100%;">Place Order</button>
+    </form>
+    <div id="confirmation" style="display:none; text-align:center; padding:2rem;">
+      <h3>✅ Order placed successfully!</h3>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Amazon Lite</p>
+  </footer>
+
+  <script>
+    document.getElementById("checkout-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      this.style.display = "none";
+      document.getElementById("confirmation").style.display = "block";
+      localStorage.removeItem("cart");
+    });
+  </script>
+</body>
+</html>
